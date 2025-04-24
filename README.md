@@ -41,3 +41,9 @@ Registro de usuario:
 POST http://localhost:3000/auth/register
 ...
 ```
+Registro de producto:
+```bash
+POST http://localhost:3000/product
+...
+```
+
