@@ -1,4 +1,4 @@
-# 🚀 Microservicio con NestJS + PostgreSQL + Docker
+# 🚀 Comunicación entre microservicios con NestJS + NATS + PostgreSQL + Docker
 
 Este proyecto es un microservicio construido con [NestJS](https://nestjs.com/), que utiliza PostgreSQL como base de datos, y Docker para orquestar los servicios de manera sencilla.
 
