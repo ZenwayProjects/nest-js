@@ -19,7 +19,7 @@ Antes de comenzar, asegurate de tener instalado:
 1. **Clona el repositorio:**
 
    ```bash
-   git clone https://github.com/tu-usuario/tu-repo.git
+   git clone https://github.com/ZenwayProjects/nest-js.git
    cd tu-repo
    ```
 2. **Instala las dependencias del proyecto:**
