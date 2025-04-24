@@ -14,12 +14,16 @@ export class ProductService {
   ) {}
 
   async create(dto: CreateProductDto) {
+    const {userId, ...rest} = dto;
     const user: User = await firstValueFrom(
       this.userClient.send('FIND_USER_BY_ID', dto.userId),
     );
     if (!user) throw new Error('User does not exist');
 
-    const product = this.productRepo.create(dto);
+    const product = this.productRepo.create({
+      ...rest,
+      user: {id: userId}
+    });
     return this.productRepo.save(product);
   }
 

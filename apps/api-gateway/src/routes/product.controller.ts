@@ -51,7 +51,6 @@ export class ProductsController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('admin')
   delete(@Param('id') id: string) {
-    console.log(id);
     return this.productClient.send('DELETE_PRODUCT', id);
   }
 }
