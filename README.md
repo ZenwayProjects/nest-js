@@ -46,7 +46,7 @@ Login: (email, password)
 POST http://localhost:3000/auth/login
 ...
 ```
-Registro de producto: (name, price, userId(FK))
+Registro de producto: (name, price, userId(FK))  (Se obtiene el userId decodeando el JWT, puede usarse https://jwt.io/ )
 ```bash
 POST http://localhost:3000/products
 ...
