@@ -1,0 +1,41 @@
+{
+  "name": "nest-js",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "dev": "concurrently -k -n \"API,PRODUCTS,USERS\" -c \"cyan,magenta,green\" \"npm run dev:api\" \"npm run dev:products\" \"npm run dev:users\"",
+    "dev:api": "ts-node-dev -r tsconfig-paths/register --respawn apps/api-gateway/src/main.ts",
+    "dev:products": "ts-node-dev -r tsconfig-paths/register --respawn apps/products-service/src/main.ts",
+    "dev:users": "ts-node-dev -r tsconfig-paths/register --respawn apps/users-service/src/main.ts",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint . .ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "migration:generate": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate ./libs/db/src/migrations/Migration -d ./libs/db/src/orm-config.ts",
+    "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./libs/db/src/orm-config.ts",
+    "migration:revert": "ts-node --transpile-only libs/db/src/orm-config.ts migration:revert"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.1",
+    "@nestjs/cli": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "concurrently": "^9.1.2",
+    "eslint": "^8.50.0",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.31.0"
+  },
+  "dependencies": {
+    "@nestjs/config": "^4.0.2"
+  }
+}

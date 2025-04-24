@@ -1,0 +1,76 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: microservices_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  nats:
+    image: nats:latest
+    container_name: nats
+    restart: always
+    ports:
+      - '4222:4222'
+      - '8222:8222'
+
+  # users-service:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #     args:
+  #       SERVICE: users-service
+  #   container_name: users-service
+  #   depends_on:
+  #     - postgres
+  #     - nats
+  #   environment:
+  #     DATABASE_URL: postgres://postgres:postgres@postgres:5432/microservices_db
+  #     NATS_URL: nats://nats:4222
+  #   ports:
+  #     - '3001:3000'
+
+  # products-service:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #     args:
+  #       SERVICE: products-service
+  #   container_name: products-service
+  #   depends_on:
+  #     - postgres
+  #     - nats
+  #   environment:
+  #     DATABASE_URL: postgres://postgres:postgres@postgres:5432/microservices_db
+  #     NATS_URL: nats://nats:4222
+  #   ports:
+  #     - '3002:3000'
+
+  # api-gateway:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #     args:
+  #       SERVICE: api-gateway
+  #   container_name: api-gateway
+  #   depends_on:
+  #     - users-service
+  #     - products-service
+  #     - nats
+  #   environment:
+  #     NATS_URL: nats://nats:4222
+  #     JWT_SECRET: supersecret
+  #     DATABASE_URL: postgres://postgres:postgres@postgres:5432/microservices_db
+  #   ports:
+  #     - '3000:3000'
+
+volumes:
+  postgres_data:
