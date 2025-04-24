@@ -22,8 +22,23 @@ Antes de comenzar, asegurate de tener instalado:
    git clone https://github.com/tu-usuario/tu-repo.git
    cd tu-repo
    ```
-2. **Instala las dependencias del proyecto:
+2. **Instala las dependencias del proyecto:**
    ```bash
    npm install
    ```
-3.
+3. **Levanta los servicios con docker:**
+   ```bash
+   docker compose up
+   ```
+4. **Aplica las migraciones para crear las tablas:**
+   ```bash
+   npm run migration:run
+   ```
+🔐 Rutas de la API para probar
+Estas son algunas rutas disponibles que podés testear con Postman, Insomnia o tu frontend:
+
+Registro de usuario:
+```bash
+POST http://localhost:3000/auth/register
+(Agregar más rutas según tu implementación)
+```
