@@ -10,7 +10,6 @@ Antes de comenzar, asegurate de tener instalado:
 
 - [Node.js](https://nodejs.org/) v18 o superior
 - [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
 
 ---
 
@@ -20,7 +19,7 @@ Antes de comenzar, asegurate de tener instalado:
 
    ```bash
    git clone https://github.com/ZenwayProjects/nest-js.git
-   cd tu-repo
+   cd nest-js
    ```
 2. **Instala las dependencias del proyecto:**
    ```bash
