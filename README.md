@@ -55,5 +55,12 @@ Listar productos de un usuario:
 ```bash
 GET http://localhost:3000/products
 ...
+```
+Borrar producto: (logueandose y con el BearerToken en Auth)
+```bash
+DELETE http://localhost:3000/products/id
+...
+```
+
 
 
