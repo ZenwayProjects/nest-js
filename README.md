@@ -40,5 +40,5 @@ Estas son algunas rutas disponibles que podés testear con Postman, Insomnia o t
 Registro de usuario:
 ```bash
 POST http://localhost:3000/auth/register
-(Agregar más rutas según tu implementación)
+...
 ```
