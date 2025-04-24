@@ -36,14 +36,24 @@ Antes de comenzar, asegurate de tener instalado:
 🔐 Rutas de la API para probar
 Estas son algunas rutas disponibles que podés testear con Postman, Insomnia o tu frontend:
 
-Registro de usuario:
+Registro de usuario: (email, password, role)
 ```bash
 POST http://localhost:3000/auth/register
 ...
 ```
-Registro de producto:
+Login: (email, password)
 ```bash
-POST http://localhost:3000/product
+POST http://localhost:3000/auth/login
 ...
 ```
+Registro de producto: (name, price, userId(FK))
+```bash
+POST http://localhost:3000/products
+...
+```
+Listar productos de un usuario:
+```bash
+GET http://localhost:3000/products
+...
+
 
