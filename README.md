@@ -16,8 +16,14 @@ Antes de comenzar, asegurate de tener instalado:
 
 ## ⚙️ Instalación
 
-1. **Cloná el repositorio:**
+1. **Clona el repositorio:**
 
    ```bash
    git clone https://github.com/tu-usuario/tu-repo.git
    cd tu-repo
+   ```
+2. **Instala las dependencias del proyecto:
+   ```bash
+   npm install
+   ```
+3.
